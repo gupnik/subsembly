@@ -1,0 +1,24 @@
+{
+  "name": "spec-builder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "asbuild:optimized": "asc assembly/index.ts -b build/build-spec.wasm -t build/build-spec.wat --runtime full --optimize",
+    "asbuild": "npm run asbuild:optimized"
+  },
+  "author": "Dastanbek Samatov",
+  "license": "ISC",
+  "dependencies": {
+    "@assemblyscript/loader": "^0.17.9",
+    "as-scale-codec": "0.2.3",
+    "subsembly-core": "1.1.0"
+  },
+  "devDependencies": {
+    "assemblyscript": "^0.17.9",
+    "mocha": "^8.0.1",
+    "chai": "^4.3.0",
+    "chai-as-promised": "^7.1.1"
+  }
+}
