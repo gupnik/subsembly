@@ -1,0 +1,34 @@
+{
+  "name": "subsembly",
+  "version": "1.0.0",
+  "description": "Starter project for Subsembly framework for building Substrate runtimes in AssemblyScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "asc test",
+    "asbuild:untouched": "asc assembly/index.ts -b build/runtime-untouched.wasm -t build/runtime-untouched.wat --runtime half --memoryBase=16777216 --importMemory --noAssert --use abort=",
+    "asbuild:optimized": "asc assembly/index.ts -b build/runtime-optimized.wasm -t build/runtime-optimized.wat --runtime half --memoryBase=16777216 --importMemory --noAssert --optimize --use abort=",
+    "build": "npm install --prefix ./cli && npm run build --prefix ./cli && node ./cli/dist/src/index.js compile"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/limechain/subsembly.git"
+  },
+  "keywords": [
+    "substrate",
+    "assemblyscript"
+  ],
+  "author": "Dastanbek Samatov <dastan@limechain.tech>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/limechain/subsembly/issues"
+  },
+  "homepage": "https://github.com/limechain/subsembly#readme",
+  "dependencies": {
+    "as-bignum": "^0.2.6",
+    "as-scale-codec": "0.2.3",
+    "subsembly-core": "*"
+  },
+  "devDependencies": {
+    "assemblyscript": "^0.17.1"
+  }
+}
